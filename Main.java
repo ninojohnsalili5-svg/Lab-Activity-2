@@ -1,31 +1,20 @@
 public class Main {
     public static void main(String[] args) {
 
-        Vehicle vehicle1 = new Vehicle();
-        vehicle1.brand = "Toyota";
-        vehicle1.model = "Vios";
-        vehicle1.year = 2020;
+    Vehicle v1 = new Vehicle("Toyota", "Camry", 2018);
+   
+        System.out.println("Vehicle 1:");
+        v1.displayInfo();
 
-        Vehicle vehicle2 = new Vehicle();
-        vehicle2.brand = "Honda";
-        vehicle2.model = "Civic";
-        vehicle2.year = 1995;
+    Vehicle v2 = new Vehicle("Volkswagen", "Beetle", 1972);
+   
+        System.out.println("Vehicle 2:");
+        v2.displayInfo();
 
-        Vehicle vehicle3 = new Vehicle();
-        vehicle3.brand = "Ford";
-        vehicle3.model = "Ranger";
-        vehicle3.year = 2018;
+    Vehicle v3 = new Vehicle("BMW", "M3", 2025);
+   
+        System.out.println("Vehicle 3:");
+        v3.displayInfo();
 
-        vehicle1.displayInfo();
-        System.out.println("Age: " + vehicle1.calculateAge());
-        System.out.println("Vintage: " + vehicle1.isVintage());
-
-        vehicle2.displayInfo();
-        System.out.println("Age: " + vehicle2.calculateAge());
-        System.out.println("Vintage: " + vehicle2.isVintage());
-
-        vehicle3.displayInfo();
-        System.out.println("Age: " + vehicle3.calculateAge());
-        System.out.println("Vintage: " + vehicle3.isVintage());
     }
 }
