@@ -1,31 +1,53 @@
 public class Main {
+
+    public static void printDetails(Vehicle vehicle) {
+        vehicle.displayInfo();
+    }
+
     public static void main(String[] args) {
 
-        Vehicle vehicle1 = new Vehicle();
-        vehicle1.brand = "Toyota";
-        vehicle1.model = "Vios";
-        vehicle1.year = 2020;
+        Vehicle vehicle = new Car("Toyota", "Vios", 2020, 4);
+        vehicle.displayInfo();
+        System.out.println();
 
-        Vehicle vehicle2 = new Vehicle();
-        vehicle2.brand = "Honda";
-        vehicle2.model = "Civic";
-        vehicle2.year = 1995;
+        vehicle = new Motorcycle("Honda", "Civic", 1995, "Manual");
+        vehicle.displayInfo();
+        System.out.println();
 
-        Vehicle vehicle3 = new Vehicle();
-        vehicle3.brand = "Ford";
-        vehicle3.model = "Ranger";
-        vehicle3.year = 2018;
+        vehicle = new Truck("Ford", "Ranger", 2018, 6);
+        vehicle.displayInfo();
+        System.out.println();
 
-        vehicle1.displayInfo();
-        System.out.println("Age: " + vehicle1.calculateAge());
-        System.out.println("Vintage: " + vehicle1.isVintage());
+        System.out.println("=== Demo 2: Method Parameter ===");
 
-        vehicle2.displayInfo();
-        System.out.println("Age: " + vehicle2.calculateAge());
-        System.out.println("Vintage: " + vehicle2.isVintage());
+        Car car = new Car("Toyota", "Vios", 2020, 4);
 
-        vehicle3.displayInfo();
-        System.out.println("Age: " + vehicle3.calculateAge());
-        System.out.println("Vintage: " + vehicle3.isVintage());
+        Motorcycle motor =
+            new Motorcycle("Honda", "Civic", 1995, "Manual");
+
+        Truck truck =
+            new Truck("Ford", "Ranger", 2018, 6);
+
+        printDetails(car);
+        System.out.println();
+
+        printDetails(motor);
+        System.out.println();
+
+        printDetails(truck);
+        System.out.println();
+
+        System.out.println("=== Demo 3: Polymorphic Array ===");
+
+        Vehicle[] vehicles = {
+            new Car("Toyota", "Vios", 2020, 4),
+            new Motorcycle("Honda", "Civic", 1995, "Manual"),
+            new Truck("Ford", "Ranger", 2018, 6)
+        };
+
+        for (Vehicle currentVehicle : vehicles) {
+            printDetails(currentVehicle);
+            System.out.println();
+        }
     }
 }
