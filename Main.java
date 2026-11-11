@@ -1,31 +1,48 @@
 public class Main {
+
+    public static void printDetails(Vehicle vehicle) {
+        vehicle.displayInfo();
+        vehicle.moveForward();
+        vehicle.moveBackwards();
+        vehicle.moveLeft();
+        vehicle.moveRight();
+        System.out.println();
+    }
+
+    public static void performService(Serviceable serviceable) {
+        serviceable.service();
+    }
+
     public static void main(String[] args) {
 
-        Vehicle vehicle1 = new Vehicle();
-        vehicle1.brand = "Toyota";
-        vehicle1.model = "Vios";
-        vehicle1.year = 2020;
+        Car car = new Car("Toyota", "Vios", 2020, 4);
+        Motorcycle motorcycle = new Motorcycle("Honda", "Civic", 1995, "Manual");
+        Truck truck = new Truck("Ford", "Ranger", 2018, 6);
+        Printer printer = new Printer();
 
-        Vehicle vehicle2 = new Vehicle();
-        vehicle2.brand = "Honda";
-        vehicle2.model = "Civic";
-        vehicle2.year = 1995;
-
-        Vehicle vehicle3 = new Vehicle();
-        vehicle3.brand = "Ford";
-        vehicle3.model = "Ranger";
-        vehicle3.year = 2018;
-
+        System.out.println("Demo 1: Parent Reference");
+        Vehicle vehicle1 = car;
         vehicle1.displayInfo();
-        System.out.println("Age: " + vehicle1.calculateAge());
-        System.out.println("Vintage: " + vehicle1.isVintage());
+        System.out.println();
 
-        vehicle2.displayInfo();
-        System.out.println("Age: " + vehicle2.calculateAge());
-        System.out.println("Vintage: " + vehicle2.isVintage());
+        System.out.println("Demo 2: Method Parameter");
+        printDetails(motorcycle);
 
-        vehicle3.displayInfo();
-        System.out.println("Age: " + vehicle3.calculateAge());
-        System.out.println("Vintage: " + vehicle3.isVintage());
+        System.out.println("Demo 3: Polymorphic Array");
+        Vehicle[] vehicles = {car, motorcycle, truck};
+
+        for (Vehicle vehicle : vehicles) {
+            printDetails(vehicle);
+        }
+
+        System.out.println("Demo 4: Interface Polymorphism");
+
+        Serviceable[] serviceableObjects = {
+            car, motorcycle, truck, printer
+        };
+
+        for (Serviceable serviceable : serviceableObjects) {
+            performService(serviceable);
+        }
     }
 }
