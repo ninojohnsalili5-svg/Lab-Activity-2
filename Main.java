@@ -2,20 +2,24 @@ public class Main {
 
     public static void printDetails(Vehicle vehicle) {
         vehicle.displayInfo();
+        vehicle.moveForward();
+        vehicle.moveBackwards();
+        vehicle.moveLeft();
+        vehicle.moveRight();
     }
 
     public static void main(String[] args) {
 
         Vehicle vehicle = new Car("Toyota", "Vios", 2020, 4);
-        vehicle.displayInfo();
+        printDetails(vehicle);
         System.out.println();
 
         vehicle = new Motorcycle("Honda", "Civic", 1995, "Manual");
-        vehicle.displayInfo();
+        printDetails(vehicle);
         System.out.println();
 
         vehicle = new Truck("Ford", "Ranger", 2018, 6);
-        vehicle.displayInfo();
+        printDetails(vehicle);
         System.out.println();
 
         System.out.println("=== Demo 2: Method Parameter ===");

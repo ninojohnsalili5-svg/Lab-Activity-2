@@ -12,4 +12,24 @@ public class Motorcycle extends Vehicle
         super.displayInfo();
         System.out.println("Engine Type: " + engineType);
     }
+
+    @Override
+    void moveForward() {
+        System.out.println("Motorcycle moves forward");
+    }
+
+    @Override
+    void moveBackwards() {
+        System.out.println("Motorcycle moves backwards");
+    }
+
+    @Override
+    void moveLeft() {
+        System.out.println("Motorcycle moves left");
+    }
+
+    @Override
+    void moveRight() {
+        System.out.println("Motorcycle moves right");
+    }
 }

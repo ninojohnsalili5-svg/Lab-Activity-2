@@ -12,4 +12,24 @@ public class Truck extends Vehicle
         super.displayInfo();
         System.out.println("Number of Wheels: " + numberOfWheels);
     }
+
+    @Override
+    void moveForward() {
+        System.out.println("Truck moves forward");
+    }
+
+    @Override
+    void moveBackwards() {
+        System.out.println("Truck moves backwards");
+    }
+
+    @Override
+    void moveLeft() {
+        System.out.println("Truck moves left");
+    }
+
+    @Override
+    void moveRight() {
+        System.out.println("Truck moves right");
+    }
 }
